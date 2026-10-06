@@ -1,10 +1,11 @@
-# 📦 Import required libraries
+# Import required libraries
 import streamlit as st
 import pandas as pd
 import altair as alt
 
-# 📂 Load the dataset
+# Load the dataset
 df = pd.read_csv("1960-2010_Movies.csv")
+df["runtimeminutes"] = pd.to_numeric(df["runtimeminutes"], errors="coerce")
 
 # Sidebar filters: Year range
 st.sidebar.header("Filters")
